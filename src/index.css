@@ -254,7 +254,6 @@ ul {
 }
 /* ============= PROJECT CSS =============== */
 
-
 nav {
   background: var(--white);
   box-shadow: var(--shadow-1);
@@ -267,7 +266,7 @@ nav {
   padding: 1rem;
 }
 
-.nav-toggle{
+.nav-toggle {
   font-size: 1.5rem;
   color: var(--primary-500);
   background: transparent;
@@ -281,7 +280,7 @@ nav {
   transform: rotate(90deg);
 }
 
-.logo{
+.logo {
   height: 40px;
 }
 
@@ -304,4 +303,71 @@ nav {
 .links-container {
   overflow: hidden;
   transition: var(--transition);
+}
+
+.social-icons {
+  display: none;
+}
+
+.social-icons:visited {
+  color: var(--grey-500);
+}
+
+@media screen and (min-width: 800px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-header {
+    padding: 0;
+  }
+
+  .nav-center {
+    max-width: 1920px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  .links-container {
+    height: auto !important;
+  }
+
+  .links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .links a {
+    padding: 0;
+  }
+
+  .links a:hover {
+    padding: 0;
+    background: transparent;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .social-icons a {
+    color: var(--primary-500);
+    transition: var(--transition);
+  }
+
+  .social-icons a:hover {
+    color: var(--primary-300);
+  }
+
+  .social-icons a:visited {
+    color: var(--primary-500);
+  }
+  
+  .social-icons a:visited:hover {
+    color: var(--primary-300);
+  }
 }

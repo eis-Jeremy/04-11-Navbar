@@ -14,7 +14,9 @@ function Navbar() {
   }
 
   const linkStyles = {
-    height: showLinks ? `${linksRef.current.getBoundingClientRect().height}px` : '0px'
+    height: showLinks
+      ? `${linksRef.current.getBoundingClientRect().height}px`
+      : '0px',
   }
   return (
     <nav>
@@ -25,19 +27,32 @@ function Navbar() {
             <FaBars />
           </button>
         </div>
-        
-          <div className='links-container' ref={linksContainerRef} style={linkStyles}>
-            <ul className="links" ref={linksRef}>
-              {links.map((link) => {
-                return (
-                  <li key={link.id}>
-                    <a href={link.url}>{link.text}</a>
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
-       
+
+        <div
+          className="links-container"
+          ref={linksContainerRef}
+          style={linkStyles}
+        >
+          <ul className="links" ref={linksRef}>
+            {links.map((link) => {
+              return (
+                <li key={link.id}>
+                  <a href={link.url}>{link.text}</a>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+        {/* social */}
+        <ul className="social-icons">
+          {social.map((socialIcon) => {
+            return (
+              <li key={socialIcon.id}>
+                <a href={socialIcon.url}>{socialIcon.icon}</a>
+              </li>
+            )
+          })}
+        </ul>
       </div>
     </nav>
   )
